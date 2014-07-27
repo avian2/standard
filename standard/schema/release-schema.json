@@ -19,19 +19,23 @@
 			"type": "object",
 			"properties": {
 				"name": {
-					"type": "string"
+					"type": "string",
+                    "mergeStrategy": "version", "mergeOptions": {"limit": 2}
 				},
                 "scheme": {
                     "description": "The scheme that holds the unique identifiers used to identify the item being identified.",
                     "type": "string",
+                    "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                     "format": "uri"
                 },
                 "uid": {
                     "description": "The unique ID for this entity under the given ID scheme.",
-                    "type": "string"
+                    "type": "string",
+                    "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                 },
 				"uri": {
 					"type": "string",
+                    "mergeStrategy": "version", "mergeOptions": {"limit": 2},
 					"format" : "uri"
 				}
 			},
@@ -71,23 +75,27 @@
 							"ocid": {
 								"title": "Open Contracting ID",
 								"description": "A unique identifier that identifies the unique Open Contracting Process. For more information see: http://ocds.open-contracting.org/standard/r/0__2__0/#defining-a-unique-contracting-process",
-								"type": "string"
+								"type": "string",
+                                "mergeStrategy": "version", "mergeOptions": {"limit": 2}
 							},
 							"releaseID": {
 								"title": "Release ID",
 								"description": "A unique identifier that identifies this release.",
-								"type": "string"
+								"type": "string",
+                                "mergeStrategy": "version", "mergeOptions": {"limit": 2}
 							},
 							"releaseTag": {
 								"title": "Release Tag",
 								"description": "A tag that helps to identify the type of data in the dataset. These may be used for advanced validation.",
 								"type": "string",
+                                "mergeStrategy": "version", "mergeOptions": {"limit": 2},
 								"enum": ["planning", "tenderNotice", "awardNotice", "contractSignature", "contractAmendment", "report", "spending", "terminationNotice"]
 							},
 							"locale": {
 								"title": "Release locale",
 								"description": "Specifies the locale of the data, to identify language of text inputs, as well as formats of date-time and numbers.",
 								"type": "string",
+                                "mergeStrategy": "version", "mergeOptions": {"limit": 2},
 								"default": "en_US"
 							}
 					},
@@ -110,7 +118,8 @@
                     "properties": {
                         "description": {
                             "description": "A description of the goods, services to be provided.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "classificationScheme": {
                         },
@@ -122,7 +131,8 @@
                         },
                         "unitOfMeasure": {
                             "description": "Description of the unit which the good comes in e.g. hours, kilograms",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "quantity": {
                             "description": "The number of units required"
@@ -153,25 +163,30 @@
                         },
                         "methodJustification": {
                             "description": "Justification of procurement method, especially in the case of Limited tendering.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "selectionCriteria": {
                             "description": "Specify the selection criteria, by lowest cost, ",
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "enum": ["Lowest Cost", "Best Proposal", "Best Value to Government", "Single bid only"]
                         },
                         "selectionDetails": {
                             "description": "Any detailed or further information on the selection criteria.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "submissionMethod": {
                             "description": "Specify the method by which bids must be submitted, in person, written, or electronic auction",
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "enum": ["Electronic Auction", "Electronic Submission", "Written", "In Person"]
                         },
                         "submissionDetails" : {
                             "description": "Any detailed or further information on the submission method.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "tenderPeriod": {
                             "description": "The period when the tender is open for submissions. The end date is the closing date for tender submissions.",
@@ -183,7 +198,8 @@
                         },
                         "clarifications": {
                             "description": "A Yes/No field as to whether clarifications were issued. Would expect clarifications to appear as amendments.",
-                            "type": "boolean"
+                            "type": "boolean",
+                             "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "awardPeriod": {
                             "description": "The date or period on which an award is anticipated to be made.",
@@ -191,11 +207,13 @@
                         },
                         "numberOfBidders": {
                             "description": "The number of unique bidders who participated in the tender",
-                            "type": "integer"
+                            "type": "integer",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "numberOfBids": {
                             "description": "The number of bids or submissions to the tender. In the case of an auction, the number of bids may differ from the numberOfBidders.",
-                            "type": "integer"
+                            "type": "integer",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "bidders": {
                             "description": "A list of all the companies who entered submissions for the tender.",
@@ -220,22 +238,26 @@
                         "id": {
                             "title": "Notice identifier",
                             "description": "The identifier that identifies the notice to the publisher. This may be the same or different from the OCID.",
-                            "format": "string"
+                            "format": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "uri": {
                             "title": "Notice URI",
                             "description": "A permanent uri that provides access to the tender.",
-                            "format": "uri"
+                            "format": "uri",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "publishedDate": {
                             "title": "Notice published date",
                             "description": "The date this version of the notice was published. In the case of notice amendments, it is the date that reflects to this version of the data.",
-                            "format": "date-time"
+                            "format": "date-time",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "isAmendment": {
                             "title": "Is this an amendment to the notice?",
                             "description": "If true, then amendment information should be provided.",
-                            "type": "boolean"
+                            "type": "boolean",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "amendment": { "$ref": "#/definitions/release/definitions/amendment" }
                     }
@@ -245,15 +267,18 @@
                     "properties": {
                         "amendmentDate": {
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "format": "date-time"
                         },
                         "amendedFields": {
                             "description": "Comma-seperated list of affected fields.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "justification": {
                             "description": "An explanation / justification for the amendment.",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         }
                     }
                 },
@@ -262,10 +287,12 @@
                     "properties": {
                         "startDate": {
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "format": "date"
                         },
                         "endDate": {
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "format": "date"
                         }
                     }
@@ -275,16 +302,19 @@
                     "properties": {
                         "description": {
                             "description": "A description of the document",
-                            "type": "string"
+                            "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2}
                         },
                         "uri": {
                             "description": "Link to the document or attachment.",
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "format": "uri"
                         },
                         "lastModified": {
                             "description": "Date that the document was last modified",
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "format": "date"
                         }
                     }
@@ -294,11 +324,13 @@
                         "amount": {
                             "description": "Amount as a number.",
                             "type": "number",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "minimum": 0
                         },
                         "currency": {
                             "description": "The currency in 3-letter ISO 4217 format.",
                             "type": "string",
+                            "mergeStrategy": "version", "mergeOptions": {"limit": 2},
                             "minLength": 3,
                             "maxLength": 3
                         }
