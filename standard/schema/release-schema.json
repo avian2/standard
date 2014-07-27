@@ -57,10 +57,7 @@
 				"releaseMeta": { "$ref": "#/definitions/release/definitions/releaseMeta" },
 				"buyer": { "$ref": "#/definitions/release/definitions/buyer" },
 				"planning": { "$ref": "#/definitions/release/definitions/planning" },
-				"formation": {
-                    "type": "object",
-                    "oneOf": [{ "$ref": "#/definitions/release/definitions/tender" }]
-                },
+				"formation": { "$ref": "#/definitions/release/definitions/tender" },
 				"award": { "$ref": "#/definitions/release/definitions/award" },
 				"contract": { "$ref": "#/definitions/release/definitions/contract" },
 				"performance": { "$ref": "#/definitions/release/definitions/performance" }
